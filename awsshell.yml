@@ -1,0 +1,12 @@
+--- # AWS EC2 INSTANCE COMMMUNICATION SHELL COMMAND EXAMPLE
+- hosts: aws
+  remote_user: ec2-user
+  become: yes
+  gather_facts: yes
+  connection: ssh
+  tasks:
+  - name: Execute a shell  command for listing DIR
+    shell: ls -al ~
+    register: result
+  - name: Display result in JSON format
+    debug: var=result
