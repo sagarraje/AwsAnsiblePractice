@@ -9,4 +9,4 @@
     shell: ls -al ~
     register: result
   - name: Display result in JSON format
-    debug: var=result
+    debug: var=result #sagar
